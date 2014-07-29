@@ -1,0 +1,129 @@
+@import "color";
+
+* {
+  font-weight: bold;
+}
+
+h1 {
+  color: $subColor2;
+}
+
+.page-header {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid $subColor2;
+}
+
+table {
+  color: $baseFontColor;
+}
+
+#contents {
+  padding:10px;
+  background: #000000;
+  opacity:0.98;
+  -webkit-filter:brightness(1.9);
+  -moz-filter:brightness(1.9);
+  filter:brightness(1.9);
+}
+
+// ##################################################
+// # btn
+// ##################################################
+.btn-default {
+  color: #000;
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+.btn-danger {
+  color: #000;
+  background-color: $subColor2;
+  border-color: #d43f3a;
+}
+.btn-primary {
+  color: #000;
+  background-color: $subColor1;
+  border-color: #357ebd;
+}
+// ##################################################
+// # Error
+// ##################################################
+.field_with_errors {
+  color: #a94442;
+  .form-control {
+    border-color: #a94442;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  }
+  .form-control:focus {
+    border-color: #843534;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+  }
+  .input-group-addon {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #a94442;
+  }
+  .form-control-feedback {
+    color: #a94442;
+  }
+}
+
+// ##################################################
+// # Alert
+// ##################################################
+.alert-success {
+  color: #06451b;
+  background-color: $subColor1;
+  border-color: #bce8f1;
+}
+
+// ##################################################
+// # Nav
+// ##################################################
+a.navbar-brand {
+  color: $subColor2;
+}
+
+#global-nav {
+  background-color: #000000;
+  opacity:0.9;
+  -webkit-filter:brightness(1.6);
+  -moz-filter:brightness(1.6);
+  filter:brightness(1.6);
+  display: block;
+  border-bottom: black;
+}
+
+.navbar-fixed-top, .navbar-fixed-bottom {
+  border-width: 0 0 1px;
+  left: 0;
+  margin-bottom: 0;
+  position: relative;
+  right: 0;
+}
+
+// ##################################################
+// # Nav
+// ##################################################
+table {
+  th {
+    color: $subColor1;
+    border-bottom: 1px $subColor1 solid;
+  }
+
+}
+
+.table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857;
+  vertical-align: top;
+  border-top: 1px $subColor1 solid;
+}
+
+.text_field {
+  @extend .text_field;
+  color: #000;
+  font-weight: bold;
+}

@@ -1,0 +1,52 @@
+<%- model_class = Score -%>
+<div class="page-header">
+    <h1><%= t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+
+<div class="row">
+    <% @categories.each do |category| %>
+        <div class="col-md-6">
+
+            <div class="panel panel-default" style=" border: 1px #268BD3 solid; background-color: #000 ">
+                <div class="panel-heading" style="background-color: #000; border-bottom: 0 #268BD3 solid; color:#F52769">
+                    <h2 class="panel-title" style="text-align: center"><%= category.category_name %></h2>
+                </div>
+
+                <% @tasks.each do |task| %>
+                    <div class="panel-heading" style="background-color: #000; border-bottom: 1px #268BD3 solid ;border-top: 1px #268BD3 solid; color:#F52769">
+                        <small style="color: #aaaaaa"><%= task.title %></small>
+                    </div>
+
+                    <table class="table" style="background-color: #000;">
+                        <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>社員番号</th>
+                            <th>名前</th>
+                            <th>スコア</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <% i = 1 %>
+                        <% Score.where(:category_id => category.id, :task_id => task.id).order("score").limit(3).each do |score| %>
+                            <% user = User.find(score.user_id) %>
+                            <tr>
+                                <td><%= i %></td>
+                                <td><%= user.user_id %></td>
+                                <td><%= user.user_name %></td>
+                                <td><%= score.score %></td>
+                            </tr>
+                            <% i += 1 %>
+                        <% end %>
+                        </tbody>
+                    </table>
+                <% end %>
+            </div>
+
+        </div>
+    <% end %>
+</div>
+
+
+
